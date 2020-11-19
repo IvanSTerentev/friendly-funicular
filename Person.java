@@ -17,8 +17,8 @@ public class Person{
 	}
 	
 	// Методы get и set для age
-	public String getAge(){
-		return this.Age;
+	public int getAge(){
+		return this.age;
 	}
 	
 	public void setAge(int pAge){

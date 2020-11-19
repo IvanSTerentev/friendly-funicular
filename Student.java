@@ -39,8 +39,7 @@ public class Student extends Person{
 	// Метод по решению задаче
 	private void taskDone(Task pTask) {				
 		if (pTask instanceof Autochecked){
-			Test t = new Test(0);
-			t.runTask();
+			((Autochecked) pTask).runTask();
 		} else {
 			while(!mentor.checkCode(pTask));
 		}
