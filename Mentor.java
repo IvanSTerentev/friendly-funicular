@@ -16,7 +16,7 @@ public class Mentor extends Person implements Staff{
 	}
 	
 	public boolean checkCode(Task pTask){
-		this.mood = (rand.nextInt(2000) > 1000)? true : false;
+		this.mood = (rand.nextInt(2000) > 1000);
 		
 		String strPrint = (this.mood)? " задача принята" : " задача не принята";
 		
