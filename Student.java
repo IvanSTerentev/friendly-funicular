@@ -37,13 +37,10 @@ public class Student extends Person{
 	}
 	
 	// Метод по решению задаче
-	private void taskDone(Task pTask) {
-		//Test tmpClass = new Test(0);
-		//DragAndDrop tmpDragAndDrop = new DragAndDrop(0);
-		
+	private void taskDone(Task pTask) {				
 		if (pTask instanceof Autochecked){
-			System.out.println("Тут");
-			//pTask.runTask();
+			Test t = new Test(0);
+			t.runTask();
 		} else {
 			while(!mentor.checkCode(pTask));
 		}
