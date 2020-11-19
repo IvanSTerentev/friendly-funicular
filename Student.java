@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Student extends Person{
 	// String fio - Фамилия и имя - тянем из родителя
 	// int age - возраст тянем из родителя
@@ -6,10 +8,10 @@ public class Student extends Person{
 	private Mentor mentor; // ментор
 	private boolean allTaskDone; // true - решены все задачи
 	
-	public Student(String pFio, int pAge, String pMentorFio, int pMentorAge){
+	public Student(String pFio, int pAge, Mentor pMentor){
 		super(pFio, pAge);
 		setCntTaskDone(0);
-		this.mentor = new Mentor(pMentorFio, pMentorAge);
+		this.mentor = pMentor;
 		setAllTaskDone(false);
 	}
 	
@@ -34,9 +36,18 @@ public class Student extends Person{
 		this.allTaskDone = pStatus;
 	}
 	
-	// Метод по решеной задаче
+	// Метод по решению задаче
 	private void taskDone(Task pTask) {
-		// Нужны доп провеки по автоматическому решению и отправке ментору
+		//Test tmpClass = new Test(0);
+		//DragAndDrop tmpDragAndDrop = new DragAndDrop(0);
+		
+		if (pTask instanceof Autochecked){
+			System.out.println("Тут");
+			//pTask.runTask();
+		} else {
+			while(!mentor.checkCode(pTask));
+		}
+				
 		this.cntTaskDone++;
 		cntTaskDoneAll++;
 	}
